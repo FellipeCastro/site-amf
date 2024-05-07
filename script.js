@@ -44,23 +44,38 @@ window.addEventListener('scroll', activeScroll)
 
 // API 
 
-let search = 'streetwear'
-const apiUrl = `https://api.mercadolibre.com/sites/MLB/search?q=${search}`
+const apiUrl = 'https://api.mercadolibre.com/sites/MLB/search?q=';
 
-const getItems = async () => {
+const container01 = document.getElementById('container-01');
+const container02 = document.getElementById('container-02');
+
+const getItems = async (search, container) => {
     try {
-        const response = await fetch(apiUrl)
+        const response = await fetch(apiUrl + search)
         const data = await response.json()
 
         const items = data.results
 
-        items.map((item) => {
-            // Criar cards
+        items.forEach((item) => {
+            const card = document.createElement('div')
+            card.className = 'swiper-slide'
+
+            card.innerHTML = `
+                <img src="${item.thumbnail}" alt="${item.title}">
+                <div class="descricao-produto">
+                    <span class="nome produto">${item.title}</span>
+                    <span class="valor produto">R$ ${item.price}</span>
+                    <button class="btn produto">Comprar</button>
+                </div>
+            `
+
+            container.appendChild(card)
         })
-    } catch {
-        console.log('Erro ao conectar API')
+    } catch (error) {
+        console.log('Erro ao conectar API', error)
     }
 }
 
-getItems()
+getItems('camisetas streetwear', container01)
+getItems('bones nba', container02)
 
