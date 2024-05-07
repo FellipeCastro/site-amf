@@ -1,2 +1,2 @@
-# site-amf
- Site de roupas chamado AMF, feito com HTML, CSS, Javascript.
+# Site AMF
+Site de roupas chamado AMF, feito com HTML, CSS, Javascript.
