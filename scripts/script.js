@@ -22,7 +22,7 @@ const fecharCarrinho = () =>{
 
 const activeScroll = () =>{
 
-   if( window.scrollY > 100){
+   if( window.scrollY > 50){
     header.classList.remove('hdr')
     header.classList.add('header-scroll')
     nav.style.top = '10vh'

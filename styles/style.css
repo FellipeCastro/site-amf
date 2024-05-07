@@ -1,227 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-
-}
-body{
-    font-family: montserrat,Sans-serif;
-    background-color: #000;
-    color: #fff;
-}
-header {
-    width: 100%;
-    
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    
-}
-.top-header{
-    width: 100%;
-    height: 3vh;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    top: 0;
-    background-color: black;
-    transition: all 1s ease-in-out;
-    z-index: 99;
-}
-
-.top{
-    width: 33.33%!important;
-    height: 100%;
-    padding: 2px;
-    
-}
-.text-topheader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-}
-.social{
-    margin: 0 5px;
-    color: #fff;
-    margin-left: 30px;
-    
-}
-
-.header-scroll{
-    height: 10vh;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 2px solid rgb(169, 169, 169);
-    position: fixed;
-    transition: all 0.8s ease-in-out;
-    top: 0;
-    z-index: 99;
-}
-
-
-.hdr {  
-    height: 13vh;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 2px solid rgb(169, 169, 169);
-    position: fixed;
-    top: 3vh;
-    transition: all 0.6s ease-in-out;
-    z-index: 99;
-}
-
-
-.input-pesquisa{
-    border-radius: 8px;
-    padding: 8px 8px;
-    width: 100%;
-    border: 0;
-}
-.pesquisa{
-    width: 35%!important;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    position: relative;
-}
-.pesquisa .material-icons{
-    display: inline-block;
-    position: absolute;
-    z-index: 999;
-    color: black;
-    right: -15px;
-    
-}
-.hdr nav a{
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-}
-.hdr nav a:hover{
-    text-decoration: underline;
-    color: gray;
-}
-
-.nav-list   {
-    width: 100%;
-    height: 5vh;
-    top:16vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    z-index: 99;
-    padding: 3px 0;
-    background-color: black;
-    border-top: 2px solid #888686 ;
-    transition: all 0.6s ease-in-out; 
-    font-size: 18px;
-    position: fixed;
-    padding: 3px 0;
-    background-color: black;
-    border-top: 2px solid #888686 ;
-}
-.nav-list a{
-    text-decoration: none;
-    color: #fff;
-}
-
-
-
-.logoamf{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 32.5%!important; 
-    
-}
-.logo-header{
-    height: 70px;
-    margin-left: 30px;
-    margin-right: 20px; 
-    transition: all 0.8 ease-in-out;  
-}
-
-.logoamf h1{
-    margin-left: 30px;
-
-}
-.carrinho{
-    width: 32.5%!important;
-    display: flex;
-    flex-direction: row-reverse;
-    
-
-}
-.carrinho img{
-    width: 30px;
-    height: 30px;
-    margin-right: 30px;
-    cursor: pointer;
-}
-.carrinho a{
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-
-}
-
-.carrinho a:hover{
-    text-decoration: underline;
-    color: gray;
-}
-
-.aba-carrinho-aberta{
-    top: 0;
-    position: fixed;
-    height: 100vh;
-    width: 40vw;
-    background-color: #fff;
-    border-radius: 6px 0 0 6px ;
-    overflow: hidden;
-    z-index: 3;
-    z-index: 1000;
-    transform: translateX(100%);
-    -webkit-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
- 
-}
-.titulo-carrinho{
-    width: 100%;
-    height: 8vh;
-    border-bottom: 2px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    font-size: 24px;
-    background-color: rgb(0, 0, 0);
-
-}
-.material-icons{
-    margin-right:25px;
-    cursor: pointer;
-}
-
-.imghdr {
-    background: rgb(0, 0, 0) url(img/banner.jpg) center center/cover no-repeat;
-
-}
-
-
-
 
 /* Principal */
 
@@ -309,13 +85,13 @@ main {
     color: rgba(255, 255, 255, 0.682);
 }
 .street{
-    background-image: url("img/streetwear.jpg");
+    background-image: url("../img/streetwear.jpg");
 }
 .street2{
-    background-image: url("img/street2.jpg");
+    background-image: url("../img/street2.jpg");
 }
 .vintage{
-    background-image:url("img/vintage.jpg") ;
+    background-image:url("../img/vintage.jpg") ;
 }
 .contmain h1{
     display: flex;
@@ -325,10 +101,12 @@ main {
     font-size: 1.8em;
 }
 
+/* ---------------------------------------------------- */
+
 .banner-informativo{
     width: 100%;
     height: 20vh;
-    margin-top: 3vh;
+    margin-top: 8vh;
     margin-bottom: 8vh;
     background-color: rgb(197, 197, 197);
     display: flex;
@@ -351,6 +129,9 @@ main {
     gap: 15px;
     font-size: 13px;
 }
+
+  /* ---------------------------------------------------- */
+
 
 .secao-maisVendidos{
     width: 100%;
@@ -382,7 +163,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 20vh;
+    min-width: 20vw;
+    width: 100%;
   }
 
   .swiper-slide .img-produto {
@@ -443,6 +225,11 @@ main {
     
   }
 
+
+
+
+  /* ---------------------------------------------------- */
+
   .form-footer{
     width: 100%;
     height: 40vh;
@@ -477,6 +264,11 @@ main {
     fill: #000;
     border-radius: 8px;
 }
+
+  /* ---------------------------------------------------- */
+
+
+
 .banner-instagram{
     width: 100%;
     height: 30vh;
@@ -513,45 +305,5 @@ main {
     cursor: pointer;
 }
 
-/*Footer*/
-footer{
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    height: 40vh;
-    width: 100%;
-}
-.contfoot{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.contimg{
-    display: flex;
-    justify-content: space-evenly;
-    width: 70%;
-    height: 100%;
-}
-.conttxt{
-    display: flex;
-    justify-content: space-evenly;
-    width: 70%;
-    height: 100%;
-}
-.conttxt div{
-    display: flex;
-    flex-direction: column;
-}
-.conttxt a{
-    text-decoration: none;
-    color: white;
-}
-.conttxt a:hover{
-    text-decoration: underline;
-}
-
-/* Java Script  */
 
 

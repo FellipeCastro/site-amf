@@ -1,0 +1,37 @@
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+}
+.contfoot{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.contimg{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 100%;
+}
+.conttxt{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 100%;
+}
+.conttxt div{
+    display: flex;
+    flex-direction: column;
+}
+.conttxt a{
+    text-decoration: none;
+    color: white;
+}
+.conttxt a:hover{
+    text-decoration: underline;
+}
