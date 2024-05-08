@@ -56,6 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const container01 = document.querySelector('#container01')
     const container02 = document.querySelector('#container02')
     const container03 = document.querySelector('#container03')
+
+    const containerCalcas = document.querySelector('#container-calcas')
+    const containerCamisas = document.querySelector('#container-camisas')
+    const containerImportados = document.querySelector('#container-importados')
+    const containerNacionais = document.querySelector('#container-nacionais')
+    const containerTenis = document.querySelector('#container-tenis')
+
     let currentCard = 0 
     let maxCards = 0
 
@@ -70,14 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             items.forEach((item) => {
                 const card = document.createElement('div')
-                card.className = 'swiper-slide'
+                if (search == 'camisetas streetwear' || search == 'oversized' || search == 'camiseta canelada') {
+                  card.className = 'swiper-slide'
+                } else {
+                  card.className = 'card-produto'
+                }                
                 // card.classList.add('swiper-slide')
 
                 card.innerHTML = `
                     <img src="${item.thumbnail}" class="img-produto" alt="${item.title}">
                     <div class="descricao-produto">
                     <h2 class="produto nome">${item.title}</h2>
-                    <strong class="produto valor">R$ ${item.price}</strong>
+                    <strong class="produto valor">R$ ${item.price}</strong> <br>
                     <button class="produto btn">Comprar</button>
                     </div>
                 `
@@ -92,8 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     getItems('camisetas streetwear', container01)
-    getItems('moleton oversized', container02)
+    getItems('oversized', container02)
     getItems('camiseta canelada', container03)
+
+    getItems('calcas cargo', containerCalcas)
+    getItems('camisas oversized', containerCamisas)
+    getItems('camiseta canelada americana', containerImportados)
+    getItems('camisas oversized', containerNacionais)
+    getItems('sapato social', containerTenis)
 
     // controls.forEach((control) => {
     //     control.addEventListener('click', () => {
