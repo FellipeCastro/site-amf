@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.innerHTML = `
                     <img src="${item.thumbnail}" class="img-produto" alt="${item.title}">
                     <div class="descricao-produto">
-                    <h2 class="produto nome">${item.title}</h2>
-                    <strong class="produto valor">R$ ${item.price}</strong> <br>
+                    <h2 class="produto nome" data-nome="${item.title}">${item.title}</h2>
+                    <strong class="produto valor" data-valor="${item.price}">R$ ${item.price}</strong>
                     <button class="produto btn">Comprar</button>
                     </div>
                 `

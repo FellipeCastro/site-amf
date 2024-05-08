@@ -43,7 +43,7 @@
 .card-produto{
     display: block;
     max-width: 22vw;
-    height: 100%;
+    height: 450px;
     transition: all 0.3s ease-in-out;
 }
 .card-produto:hover{
@@ -52,21 +52,28 @@
 }
 .card-produto img{
     width: 100%;
-    height: 400px;
+    height: 70%;
     object-fit: cover;
-    margin-bottom: 1em;
 }
-.descricao{
+.descricao-produto{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    gap: 10px;
+    height: 30%;
 }
+.descricao-produto .nome{
+    text-transform: uppercase;
+    font-size: 13px;
+    text-align: start;
+    
+    
+  }
 .valor{
     font-size: bold 16px;
     font-family:sans-serif;
-    margin-bottom: 1em;
   }
 .btn{
     padding: 5px;
@@ -75,9 +82,10 @@
     letter-spacing: 0.8px;
     cursor: pointer;
     background-color: #ffffff;
-    
   }
-
+ .produto{
+    margin-left: 10px;
+  }
 
 /* FORM AND INSTA */
 
