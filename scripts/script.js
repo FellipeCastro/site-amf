@@ -131,11 +131,7 @@ const initSwiper = () => {
         prevEl: ".swiper-button-prev",
       },
     })
-  }
-
-// carrosel
-
-var swiper = new Swiper(".carrosel-container", {
+    var swiper = new Swiper(".carrosel-container", {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
@@ -147,3 +143,8 @@ var swiper = new Swiper(".carrosel-container", {
     clickable: true,
   },
 });
+  }
+
+// carrosel
+
+
