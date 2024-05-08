@@ -24,6 +24,25 @@ footer{
     width: 70%;
     height: 100%;
 }
+.conttxt ul{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    height: 18vh;
+}
+.conttxt li{
+    display: flex;
+    justify-content: space-between;
+    width: 6.5vw;
+    align-items: center;
+    list-style: none;
+    flex-direction: row;
+
+}
+.conttxt img{
+    width: 30px;
+}
 .conttxt div{
     display: flex;
     flex-direction: column;
