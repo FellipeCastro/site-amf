@@ -41,14 +41,20 @@ const activeScroll = () =>{
 
 window.addEventListener('scroll', activeScroll)
 
+
+
+
+
+
 // API 
 
 document.addEventListener('DOMContentLoaded', () => {
     const apiUrl = 'https://api.mercadolibre.com/sites/MLB/search?q='
 
-    const container01 = document.getElementById('container-01')
-    const controls = document.querySelectorAll('.control')
-    let currentCard = 0
+    const container01 = document.querySelector('.container-produtos')
+    // const controls = document.querySelectorAll('.control')
+    const containerCard = document.querySelector('.cont-wrapper')
+    let currentCard = 0 
     let maxCards = 0
 
     const getItems = async (search, container) => {
@@ -58,48 +64,86 @@ document.addEventListener('DOMContentLoaded', () => {
             const items = data.results
 
             maxCards += items.length
+            console.log(maxCards)
 
             items.forEach((item) => {
                 const card = document.createElement('div')
-                card.className = 'card'
+                card.className = 'swiper-slide'
+                // card.classList.add('swiper-slide')
 
                 card.innerHTML = `
-                    <img src="${item.thumbnail}" alt="${item.title}">
-                    <strong>${item.title}</strong>
-                    <span>R$ ${item.price}</span>
-                    <button>Comprar</button>
+                    <img src="${item.thumbnail}" class="img-produto" alt="${item.title}">
+                    <div class="descricao-produto">
+                    <h2 class="produto nome">${item.title}</h2>
+                    <strong class="produto valor">R$ ${item.price}</strong>
+                    <button class="produto btn">Comprar</button>
+                    </div>
                 `
-
                 container.appendChild(card)
+               
             })
+
+            initSwiper()
         } catch (error) {
             console.log('Erro ao conectar API', error)
         }
     }
+    
+    getItems('camisetas streetwear', containerCard)
 
-    getItems('camisetas streetwear', container01)
+    // controls.forEach((control) => {
+    //     control.addEventListener('click', () => {
+    //         const isLeft = control.classList.contains('arrow-left')
 
-    controls.forEach((control) => {
-        control.addEventListener('click', () => {
-            const isLeft = control.classList.contains('arrow-left')
+    //         if (isLeft) {
+    //             currentCard -= 1
+    //         } else {
+    //             currentCard += 1
+    //         }
 
-            if (isLeft) {
-                currentCard -= 1
-            } else {
-                currentCard += 1
-            }
+    //         if (currentCard >= maxCards) {
+    //             currentCard = 0
+    //         } else if (currentCard < 0) {
+    //             currentCard = maxCards - 1
+    //         }
 
-            if (currentCard >= maxCards) {
-                currentCard = 0
-            } else if (currentCard < 0) {
-                currentCard = maxCards - 1
-            }
-
-            document.querySelectorAll('.card').forEach(item => item.classList.remove('current-card'))
-            const cards = document.querySelectorAll('.card')
-            cards[currentCard].scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-            cards[currentCard].classList.add('current-card')
-        })
-    })
+    //         document.querySelectorAll('.card').forEach(item => item.classList.remove('current-card'))
+    //         const cards = document.querySelectorAll('.card')
+    //         cards[currentCard].scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    //         cards[currentCard].classList.add('current-card')
+    //     })
+    // })
 })
 
+// Scroll
+
+const initSwiper = () => {
+    swiper = new Swiper(".container-produtos", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    })
+  }
+
+// carrosel
+
+var swiper = new Swiper(".carrosel-container", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
