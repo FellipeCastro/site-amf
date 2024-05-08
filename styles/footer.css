@@ -15,13 +15,14 @@ footer{
 .contimg{
     display: flex;
     justify-content: space-evenly;
-    width: 70%;
     height: 100%;
+}
+.contimg img{
+    width: 150px;
 }
 .conttxt{
     display: flex;
     justify-content: space-evenly;
-    width: 70%;
     height: 100%;
 }
 .conttxt ul{
