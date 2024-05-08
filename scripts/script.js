@@ -43,39 +43,63 @@ window.addEventListener('scroll', activeScroll)
 
 // API 
 
-const apiUrl = 'https://api.mercadolibre.com/sites/MLB/search?q='
+document.addEventListener('DOMContentLoaded', () => {
+    const apiUrl = 'https://api.mercadolibre.com/sites/MLB/search?q='
 
-const container01 = document.getElementById('container-01')
-const container02 = document.getElementById('container-02')
+    const container01 = document.getElementById('container-01')
+    const controls = document.querySelectorAll('.control')
+    let currentCard = 0
+    let maxCards = 0
 
-const getItems = async (search, container) => {
-    try {
-        const response = await fetch(apiUrl + search)
-        const data = await response.json()
+    const getItems = async (search, container) => {
+        try {
+            const response = await fetch(apiUrl + search)
+            const data = await response.json()
+            const items = data.results
 
-        const items = data.results
+            maxCards += items.length
 
-        items.forEach((item) => {
-            const card = document.createElement('div')
-            card.className = 'swiper-slide'
+            items.forEach((item) => {
+                const card = document.createElement('div')
+                card.className = 'card'
 
-            card.innerHTML = `
-                <img src="${item.thumbnail}" alt="${item.title}" class="img-produto">
-                <div class="descricao-produto">
-                    <span class="nome produto">${item.title}</span>
-                    <span class="valor produto">R$ ${item.price}</span>
-                    <button class="btn produto">Comprar</button>
-                </div>
-            `
+                card.innerHTML = `
+                    <img src="${item.thumbnail}" alt="${item.title}">
+                    <strong>${item.title}</strong>
+                    <span>R$ ${item.price}</span>
+                    <button>Comprar</button>
+                `
 
-            container.appendChild(card)
-        })
-    } catch (error) {
-        console.log('Erro ao conectar API', error)
+                container.appendChild(card)
+            })
+        } catch (error) {
+            console.log('Erro ao conectar API', error)
+        }
     }
-}
 
-getItems('camisetas streetwear', container01)
-getItems('bones nba', container02)
+    getItems('camisetas streetwear', container01)
 
+    controls.forEach((control) => {
+        control.addEventListener('click', () => {
+            const isLeft = control.classList.contains('arrow-left')
+
+            if (isLeft) {
+                currentCard -= 1
+            } else {
+                currentCard += 1
+            }
+
+            if (currentCard >= maxCards) {
+                currentCard = 0
+            } else if (currentCard < 0) {
+                currentCard = maxCards - 1
+            }
+
+            document.querySelectorAll('.card').forEach(item => item.classList.remove('current-card'))
+            const cards = document.querySelectorAll('.card')
+            cards[currentCard].scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+            cards[currentCard].classList.add('current-card')
+        })
+    })
+})
 

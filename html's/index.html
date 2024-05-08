@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <!--  -->
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/108acab114.js" crossorigin="anonymous" defer></script>
   
     <link rel="stylesheet" href="https://www.flaticon.com/br/icon-font-gratis">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -152,28 +155,35 @@
     <section class="secao-maisVendidos">
         <span class="titulo-secao">Mais Vendidos</span>
 
-    <div class="container-produtos">
-    <div class="swiper-wrapper" id="container-01">
+        <div class="container">
+            <button class="arrow-left control"><i class="fa-solid fa-angle-left"></i></button>
 
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-          
+            <div class="cards-container" id="container-01">
+            </div>
+
+            <button class="arrow-right control"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+
+        <!-- <div class="container-produtos">
+        <div class="swiper-wrapper" id="container-01">
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        </div> -->          
     </section>
 
-    <section class="secao-acessorios">
+    <!-- <section class="secao-acessorios">
         <span class="titulo-secao">Acessórios</span>
 
-    <div class="container-produtos">
-    <div class="swiper-wrapper" id="container-02">
+        <div class="container-produtos">
+        <div class="swiper-wrapper" id="container-02">
 
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-          
-    </section>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        </div>       
+    </section> -->
 
 
    
@@ -221,37 +231,36 @@
         </section>
     </footer>
     
-<script  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-    var swiper = new Swiper(".container-produtos", {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-    var swiper = new Swiper(".carrosel-container", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-</script>
+    <script>
+        // var swiper = new Swiper(".container-produtos", {
+        // slidesPerView: 4,
+        // spaceBetween: 30,
+        // loop: true,
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     clickable: true,
+        // },
+        // navigation: {
+        //     nextEl: ".swiper-button-next",
+        //     prevEl: ".swiper-button-prev",
+        // },
+        // });
+        var swiper = new Swiper(".carrosel-container", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        });
+    </script>
     <script  src="../scripts/script.js"></script>
-    
    
 </body>
 </html>
