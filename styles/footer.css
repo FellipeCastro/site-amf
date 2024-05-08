@@ -34,7 +34,7 @@ footer{
 .conttxt li{
     display: flex;
     justify-content: space-between;
-    width: 6.5vw;
+    width: 7.5vw;
     align-items: center;
     list-style: none;
     flex-direction: row;
