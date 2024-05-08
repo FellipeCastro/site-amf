@@ -11,7 +11,8 @@
 }
 
 .img-slide-carrosel{
-    height: 100%;
+    width: 95%;
+
     
 }
 main {
@@ -41,6 +42,7 @@ main {
     align-items: center;
 }
 .categoria{
+    margin-top: 100px;
     width: 30%;
     height: 100%;
     background-position: center ;
@@ -86,13 +88,14 @@ main {
     color: rgba(255, 255, 255, 0.682);
 }
 .street{
-    background-image: url("../img/streetwear.jpg");
+    background: purple url("../img/streetwear.jpg") center center/cover no-repeat;
+    
 }
 .street2{
-    background-image: url("../img/street2.jpg");
+    background: purple url("../img/street2.jpg") center center/cover no-repeat;
 }
 .vintage{
-    background-image:url("../img/vintage.jpg") ;
+    background: purple url("../img/vintage.jpg") center center/cover no-repeat;
 }
 .contmain h1{
     display: flex;
