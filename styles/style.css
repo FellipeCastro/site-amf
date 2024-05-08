@@ -169,6 +169,7 @@ main {
     max-width: 90vw;
     height: 70%;
     overflow: hidden;
+    background-color: red;
   }
 
   
