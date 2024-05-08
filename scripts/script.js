@@ -51,9 +51,11 @@ window.addEventListener('scroll', activeScroll)
 document.addEventListener('DOMContentLoaded', () => {
     const apiUrl = 'https://api.mercadolibre.com/sites/MLB/search?q='
 
-    const container01 = document.querySelector('.container-produtos')
+    // const container01 = document.querySelector('.container-produtos')
     // const controls = document.querySelectorAll('.control')
-    const containerCard = document.querySelector('.cont-wrapper')
+    const container01 = document.querySelector('#container01')
+    const container02 = document.querySelector('#container02')
+    const container03 = document.querySelector('#container03')
     let currentCard = 0 
     let maxCards = 0
 
@@ -89,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    getItems('camisetas streetwear', containerCard)
+    getItems('camisetas streetwear', container01)
+    getItems('moleton oversized', container02)
+    getItems('camiseta canelada', container03)
 
     // controls.forEach((control) => {
     //     control.addEventListener('click', () => {
