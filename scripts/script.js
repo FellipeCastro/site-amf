@@ -233,8 +233,7 @@ try {
       const addToCartBtn = card.querySelector('.add-to-cart-btn')
         addToCartBtn.addEventListener('click', AdCarrinho)
   })
-
-      initSwiper() 
+      tamanhoTela()
       
   } catch (error) {
       console.log('Erro ao conectar API', error)
@@ -256,7 +255,7 @@ getItems('tenis skatista', containerTenis)
 
 // ORGANIZANDO OS CARDS -------------------------------------------------------------------
 
-const initSwiper = () => {
+const initSwiper1280 = () => {
     swiper = new Swiper(".container-produtos", {
       slidesPerView: 4,
       spaceBetween: 30,
@@ -278,12 +277,84 @@ const initSwiper = () => {
     clickable: true,
   },
 });
+}
+
+const initSwiper900 = () => {
+  swiper = new Swiper(".container-produtos", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+
+  })
+  var swiper = new Swiper(".carrosel-container", {
+spaceBetween: 30,
+centeredSlides: true,
+autoplay: {
+  delay: 2500,
+  disableOnInteraction: false,
+},
+pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+},
+});
+}
+
+const initSwiper1000 = () => {
+  swiper = new Swiper(".container-produtos", {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+   
+    },
+  })
+  var swiper = new Swiper(".carrosel-container", {
+spaceBetween: 30,
+centeredSlides: true,
+autoplay: {
+  delay: 2500,
+  disableOnInteraction: false,
+},
+pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+},
+});
   }
- 
 
+ const tamanhoTela = () =>{
+  var tamanho = window.screen.width
 
+  if(tamanho >= 1280 & tamanho > 1000){
+    console.log(tamanho)
+    initSwiper1280()
+  }else if(tamanho <= 1000 & tamanho > 600 ){
+    var carrinho = document.querySelector('.aba-carrinho-aberta')
+    carrinho.style.width = '100vw'
+    initSwiper1000()
+  }else if(tamanho <= 600){
+    var carrinho = document.querySelector('.aba-carrinho-aberta')
+    var containeiProd = document.querySelector('.container-produtos')
+    var botao = document.querySelectorAll('.false-button-categoria') 
+    var cate = document.querySelectorAll('.categoria')
+    for(i=0 ; i < botao.length ; i++){
+      var cateA = cate[i]
+      cateA.style.height = '30%'
+      
+    }
+    
+    for(i=0 ; i < botao.length ; i++){
+      var botaoA = botao[i]
+      botaoA.style.visibility = 'hidden'
+    }
+    
+    carrinho.style.width = '100vw'
+    initSwiper900()
+  }
 
-  
+ }
+
  
  
  
