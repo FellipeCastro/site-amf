@@ -1,4 +1,4 @@
-/* PRIMEIRA SEÇÃO */
+PRIMEIRA SEÇÃO
 
 .container-namepage{
     width: 100%;
@@ -40,11 +40,13 @@
     gap: 2vw;
    
 }
-.card-produto{
-    display: block;
-    max-width: 22vw;
-    height: 450px;
-    transition: all 0.3s ease-in-out;
+
+.card-produto {
+  width: 20vw;
+  max-width: 300px;
+  min-width: 290px;
+  height: 450px;
+  transition: all 0.3s ease-in-out;
 }
 .card-produto:hover{
     transform: scale(1.03);
