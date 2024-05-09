@@ -32,6 +32,11 @@
 
 /*  SEGUNDA SEÇÃO  */
 
+#icon-carregando{
+    position: absolute;
+    visibility: visible;
+}
+
 .section-nacionais{
     padding: 5vh 0;
     display: flex;

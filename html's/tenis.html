@@ -25,43 +25,65 @@
             <div class="top none"></div>
        </section>
 
-        <section class="hdr">
+       <section class="hdr">
            
-                <div class="logoamf">
-                <img src="../img/banner.jpg" class="logo-header" alt="Logo">
-                </div>
-                
-                <div class="pesquisa">
-                <input type="text" class="input-pesquisa" placeholder="O que você está procurando?">
-                <i class="material-icons">&#xe8b6;</i>
-                </div>
+        <div class="logoamf">
+        <img src="../img/banner.jpg" class="logo-header" alt="Logo">
+        </div>
+        
+        <div class="pesquisa">
+        <input type="text" class="input-pesquisa" placeholder="O que você está procurando?">
+        <i class="material-icons">&#xe8b6;</i>
+        </div>
+        <div class="carrinho">
+            <div class="img-container" onclick="mostrarCarrinho()"><img src="../img/carrinho.png" ><span class="qnt-indicada">0</span></div>
 
-                <div class="carrinho">
-                    <div class="img-container" onclick="mostrarCarrinho()"><img src="../img/carrinho.png" ></div>
-                    <div class="aba-carrinho-aberta">
-
-                        <div class="titulo-carrinho">  
-                        Carrinho de Compras
-                        <span onclick="fecharCarrinho()"><i class="material-icons" style="font-size: 30px;">&#xe5cd;</i></span>
-                        </div>
-
-                        <div class="produtos-carrinho"></div>
-                    </div>
-                </div>
-                <div class="nav-list"> 
+            <div class="aba-carrinho-aberta">
             
-
-                    <a href="../html's/index.html">Inicio</a>
-                    <a href="../html's/nacional.html">Nacionais</a>
-                    <a href="../html's/importados.html" >Importados</a>
-                    <a href="../html's/camisas.html">Camisas</a>
-                    <a href="../html's/calcas.html">Calças</a>
-                    <a href="../html's/tenis.html" style="color: #ddd; border-bottom: 1px solid white;">Tênis</a>
-
-             </nav>
+                <div class="titulo-carrinho"> 
+                    Carrinho de Compras 
+                <span onclick="fecharCarrinho()"><i class="material-icons" style="font-size: 30px;">&#xe5cd;</i></span>
+                </div>
+                <div class="container-carrinho">
+                    <div class="produtos-carrinho">
+                   
+                    </div>
+                    
+                </div
+                ><div class="total-carrinho">
+                    <div class="info-total">
+                        <span class="total"><strong>Total:</strong></span>    
+                        <span ><strong class="valor-calculado">R$0,00</strong></span>
+                    </div>
+                    <div class="contain-btn-finalizar">
+                        <button class="btn-finalizar-compra">Finalizar Compra</button>
+                    </div>
+                    
+                    </div>
             </div>
-             
-        </section>
+
+
+        </div>
+
+        </div>
+        <div class="nav-list"> 
+    
+
+            <a href="../index.html">Inicio</a>
+            <a href="../html's/nacional.html">Nacionais</a>
+            <a href="../html's/importados.html" >Importados</a>
+            <a href="../html's/camisas.html">Camisas</a>
+            <a href="../html's/calcas.html">Calças</a>
+            <a href="../html's/tenis.html">Tênis</a>
+
+     </nav>
+
+
+    </div>
+     
+
+
+</section>
     </header>
     <div class="adaptar-header"></div>
     <main class="main-nacionais">
