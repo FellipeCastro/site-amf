@@ -249,7 +249,7 @@ getItems('calcas cargo', containerCalcas)
 getItems('camisas oversized', containerCamisas)
 getItems('camiseta canelada americana', containerImportados)
 getItems('camisas oversized', containerNacionais)
-getItems('sapato social', containerTenis)
+getItems('tenis skatista', containerTenis)
 
 
 })
