@@ -53,7 +53,7 @@ main {
     cursor: pointer;
 }
 .categoria:hover{
-    background-size: 110% 110%;
+    background-size: 105%;
     
 }
 .overlay-categoria{
