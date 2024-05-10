@@ -12,7 +12,7 @@ var SomandoValores = 0
 // MOSTRAR ABA DO CARRINHO / OCULTAR ABA DO CARRINHO
 
 const mostrarCarrinho = () =>{
-   
+
     abaCar.style.transform = ' translateX(0%)' 
     document.body.style.overflowY = 'hidden'
 }
@@ -22,6 +22,10 @@ const fecharCarrinho = () =>{
     abaCar.style.transform = ' translateX(100%)' 
     document.body.style.overflowY = 'scroll'
 }
+// ------------------------------------------------
+
+
+// EFEITO HEADER NO SCROLL
 
 const activeScroll = () =>{
 
@@ -41,20 +45,18 @@ const activeScroll = () =>{
 
 }
 
-
 window.addEventListener('scroll', activeScroll)
-
-// ADICIONANDO ITEM AO CARRINHO ----------------------------------------------
-
+// ------------------------------------------------
 
 
-const calcularTotal = (operador) =>{
+
+// CALCULANDO VALOR TOTAL DE ITEMS NO CARRINHO
+
+const calcularTotal = () =>{
     var SomandoValores = 0
     const baseContainer = document.querySelector('.produtos-carrinho')
     const QntValores = baseContainer.querySelectorAll('.valor-produto')
     const valorAtualizado = document.querySelector('.valor-calculado') 
-
-    console.log(QntValores)
 
     for(i = 0 ; i < QntValores.length ; i++){
       SomandoValores = parseFloat(SomandoValores) + parseFloat(QntValores[i].innerHTML.replace(',' , '.'))
@@ -62,6 +64,9 @@ const calcularTotal = (operador) =>{
     
     valorAtualizado.innerHTML = 'R$'+ SomandoValores.toFixed(2)
 } 
+// -------------------------------------------
+
+// DIMINUINDO A QUANTIDADE DE UM PRODUTO DO CARRINHO
 
 const tirarUmProduto = (event) => {
   const ouvinte = event.target.parentNode.parentNode
@@ -69,7 +74,6 @@ const tirarUmProduto = (event) => {
   const convert = parseInt(quantProduto.innerHTML)
 
   if(convert == 1){
-    console.log('executou if')
     return;
   }else{ 
     const paiMaisUm =  event.target.parentNode.parentNode
@@ -81,11 +85,15 @@ const tirarUmProduto = (event) => {
     const valorSubtraido = parseFloat(valorAtual.innerHTML.replace(',', '.')) - valorInicial
 
     valorAtual.innerHTML = valorSubtraido.toFixed(2)
-    
-    console.log('executou else')
   }
   calcularTotal()
 }
+// -------------------------------------------------
+
+
+
+
+// REMOVENDO UM ITEM DO CARRINHO 
 
 const removerProduto = (event) =>{
   const contCar = document.querySelector('.qnt-indicada')
@@ -96,6 +104,12 @@ const removerProduto = (event) =>{
   contCar.innerHTML = Number(contCar.innerHTML) - 1
   calcularTotal()
 }
+
+// ------------------------------
+
+
+
+// AUMENTANDO A QUANTIDADE DE UM PRODUTO NO CARRINHO
 
   const AddUmProduto = (event) => {
     const quantProduto = event.target.parentNode.querySelector('.qnt-produto')
@@ -115,6 +129,10 @@ const removerProduto = (event) =>{
   calcularTotal()
 }
 
+// -------------------------------------------------------
+
+
+// ADICIONANDO ITEM NO CARRINHO AO CLICAR EM COMPRAR
 
 const AdCarrinho = ({target}) =>{
     const contCar = document.querySelector('.qnt-indicada')
@@ -177,6 +195,12 @@ const AdCarrinho = ({target}) =>{
  
 }
 
+// -------------------------------------------------
+
+
+
+
+
 
 
 // CONECTANDO COM A API E CRIANDO OS CARDS DE PRODUTOS DINÂMICAMENTE DE ACORDO COM A QUANTIDADE DE ITEMS -------------------
@@ -208,7 +232,7 @@ try {
   items.forEach((item) => {
       const card = document.createElement('div')
       if (search == 'camisetas streetwear' || search == 'oversized' || search == 'camiseta canelada') {
-        card.className = 'swiper-slide'
+        card.className = 'swiper-slide adapte'
       } else {
         card.className = 'card-produto'
       }                
@@ -327,17 +351,41 @@ pagination: {
   var tamanho = window.screen.width
 
   if(tamanho >= 1280 & tamanho > 1000){
-    console.log(tamanho)
+
     initSwiper1280()
+
   }else if(tamanho <= 1000 & tamanho > 600 ){
+
     var carrinho = document.querySelector('.aba-carrinho-aberta')
+    var next = document.querySelectorAll('.swiper-button-next')
+
+    for(i=0 ; i < next.length ; i++){
+      var nextAtual = next[i]
+      nextAtual.style.visibility = 'hidden'
+    }
+
     carrinho.style.width = '100vw'
     initSwiper1000()
+
   }else if(tamanho <= 600){
+
     var carrinho = document.querySelector('.aba-carrinho-aberta')
     var containeiProd = document.querySelector('.container-produtos')
     var botao = document.querySelectorAll('.false-button-categoria') 
     var cate = document.querySelectorAll('.categoria')
+    var Botaonext = document.querySelectorAll('.swiper-button-next')
+    var Botaoprev = document.querySelectorAll('.swiper-button-prev')
+
+    for(i=0 ; i < Botaonext.length ; i++){
+      var nextAtual = Botaonext[i]
+      nextAtual.style.visibility = 'hidden'
+    }
+    
+    for(i=0 ; i < Botaoprev.length ; i++){
+      var prevAtual = Botaoprev[i]
+      prevAtual.style.visibility = 'hidden'
+    }
+
     for(i=0 ; i < botao.length ; i++){
       var cateA = cate[i]
       cateA.style.height = '30%'
