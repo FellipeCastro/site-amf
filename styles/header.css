@@ -92,9 +92,9 @@ header {
     position: absolute;
     z-index: 999;
     color: black;
-    right: -15px;
-    
+    right: -15px; 
 }
+
 .hdr nav a{
     text-decoration: none;
     color: white;
@@ -276,9 +276,6 @@ header {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-.cont-deletar-produto img{
-   
 }
 .bottom-descricao-carrinho{
     width: 100%;
